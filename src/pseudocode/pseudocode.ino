@@ -26,9 +26,12 @@ void loop() {
     else
     {
       작은소리의 부저 출력 ;
-      LED를 초록 색으로
+      LED를 초록 색으로 ;
     }
 
-    1초 delay
+    1초 delay ;
+  }
+  else    //물체가 감지되지 않은경우
+  {
   }
 }
