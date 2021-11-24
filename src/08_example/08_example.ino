@@ -4,6 +4,10 @@ void setup()
   
   pinMode(6, OUTPUT);  //6 : Trigger
   pinMode(7, INPUT);    //7 : Echo
+
+  pinMode(9, OUTPUT) ;  //BLUE
+  pinMode(10, OUTPUT) ; //GREEN
+  pinMode(11, OUTPUT) ; //red
 }
 
 void loop()
@@ -22,4 +26,12 @@ void loop()
   Serial.print("Ultra Sonic : ") ;
   Serial.print(distance) ;
   Serial.println("cm") ;
+
+  int green_value = (distance / 100.0)* 255 ;
+  if( green_value > 255 ) green_value = 255 ;
+
+  int red_value = 255 - green_value ;
+
+  analogWrite(11, red_value) ;
+  analogWrite(10, green_value) ;
 }
